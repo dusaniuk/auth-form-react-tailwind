@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      borderRadius: {
+        "4xl": "1.875rem",
+      },
       fontFamily: {
         sans: [
           "Inter",
