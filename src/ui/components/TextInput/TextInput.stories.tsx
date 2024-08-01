@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { TextInput } from "./TextInput";
 
 const meta = {
-  title: "components/TextInput",
+  title: "ui/components/TextInput",
   component: TextInput,
   args: {
     type: "text",

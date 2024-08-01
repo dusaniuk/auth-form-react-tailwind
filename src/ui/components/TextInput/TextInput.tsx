@@ -12,12 +12,12 @@ const textInputVariants = cva(
 export type TextInputVariantProps = VariantProps<typeof textInputVariants>;
 
 export type TextInputProps = TextInputVariantProps &
-  Pick<InputHTMLAttributes<HTMLInputElement>, "type" | "placeholder">;
+  InputHTMLAttributes<HTMLInputElement>;
 
 export function TextInput(props: TextInputProps) {
-  const { type = "text", ...otherProps } = props;
+  const { ...otherProps } = props;
 
   const classes = classNames(textInputVariants({}));
 
-  return <input type={type} className={classes} {...otherProps} />;
+  return <input className={classes} {...otherProps} />;
 }
