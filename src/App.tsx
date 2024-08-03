@@ -1,7 +1,9 @@
+import { SignUpForm } from "@app/auth/SignUpForm";
+
 function App() {
   return (
     <>
-      <h1>Hello there!</h1>
+      <SignUpForm />
     </>
   );
 }
