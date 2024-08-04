@@ -57,8 +57,8 @@ export function SignUpForm() {
         return validationErrors;
       }
     },
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: () => {
+      alert("Do something!");
     },
   });
 
