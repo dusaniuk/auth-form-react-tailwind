@@ -77,7 +77,7 @@ export function SignUpForm() {
   }
 
   return (
-    <div className="w-80 text-center">
+    <div className="w-80 text-center z-10">
       <Text size="h1" color="primary">
         Sign up
       </Text>
