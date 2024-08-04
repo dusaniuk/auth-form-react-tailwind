@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import classNames from "classnames";
 
 const buttonVariants = cva(
-  "py-3 px-6 rounded-4xl text-white font-bold max-w-60",
+  "py-3 px-6 rounded-4xl text-white font-bold max-w-60 transition-opacity disabled:opacity-70",
   {
     variants: {
       variant: {
