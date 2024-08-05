@@ -7,6 +7,18 @@ const meta = {
   args: {
     type: "text",
     placeholder: "Type something...",
+    valid: false,
+    error: false,
+  },
+  argTypes: {
+    valid: {
+      options: [true, false],
+      control: { type: "radio" },
+    },
+    error: {
+      options: [true, false],
+      control: { type: "radio" },
+    },
   },
   render: (args) => (
     <div className="flex flex-col p-8 bg-slate-200 max-w-[379px]">
