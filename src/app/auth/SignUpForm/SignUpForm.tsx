@@ -1,10 +1,11 @@
 import { useAuthContext } from "@app/context/auth";
 import { Button } from "@ui/components/Button";
-import { Text, TextProps } from "@ui/components/Text/Text";
+import { Text } from "@ui/components/Text/Text";
 import { TextInput } from "@ui/components/TextInput";
 import { FormikErrors, useFormik } from "formik";
 import { useState } from "react";
-import { object, string, ObjectSchema, ValidationError } from "yup";
+import { object, string, ValidationError, type ObjectSchema } from "yup";
+import { PasswordValiditySection } from "./PasswordValiditySection";
 
 interface FormValues {
   email: string;
@@ -65,20 +66,6 @@ export function SignUpForm() {
     },
   });
 
-  function getPasswordRuleColor(rules: string[]): TextProps["color"] {
-    if (!form.touched.password) {
-      return rules.some((rule) => passwordErrors.includes(rule))
-        ? "primary"
-        : "success";
-    }
-
-    if (rules.some((rule) => passwordErrors.includes(rule))) {
-      return "error";
-    }
-
-    return "success";
-  }
-
   return (
     <div className="w-80 text-center z-10">
       <Text size="h1" color="primary">
@@ -111,24 +98,10 @@ export function SignUpForm() {
             onChange={form.handleChange}
           />
           <div className="flex flex-col text-left pl-5 gap-1">
-            <Text
-              color={getPasswordRuleColor(["min", "no-whitespace"])}
-              size="label"
-            >
-              8 characters or more (no spaces)
-            </Text>
-            <Text
-              color={getPasswordRuleColor([
-                "min-one-uppercase",
-                "min-one-lowercase",
-              ])}
-              size="label"
-            >
-              Uppercase and lowercase letters
-            </Text>
-            <Text color={getPasswordRuleColor(["min-one-digit"])} size="label">
-              At least one digit
-            </Text>
+            <PasswordValiditySection
+              passwordErrors={passwordErrors}
+              passwordFieldTouched={Boolean(form.touched.password)}
+            />
           </div>
         </div>
         <Button
