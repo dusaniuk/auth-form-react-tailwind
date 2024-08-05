@@ -3,11 +3,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import classNames from "classnames";
 
 const buttonVariants = cva(
-  "py-3 px-6 rounded-4xl text-white font-bold max-w-60 transition-opacity disabled:opacity-70",
+  "py-3 px-6 rounded-4xl text-white font-bold max-w-60 transition-all disabled:opacity-70",
   {
     variants: {
       variant: {
-        primary: "bg-gradient-to-r from-[#70C3FF] to-[#4B65FF]",
+        primary:
+          "bg-gradient-to-r from-[#70C3FF] to-[#4B65FF] hover:filter hover:brightness-110 hover:contrast-125",
         secondary: "bg-[#F2F2F2] text-[#4B65FF]",
       },
       fullWidth: {
