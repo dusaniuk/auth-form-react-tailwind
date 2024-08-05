@@ -8,7 +8,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-r from-[#70C3FF] to-[#4B65FF] hover:filter hover:brightness-110 hover:contrast-125",
+          "bg-gradient-to-r from-[#70C3FF] to-[#4B65FF] hover:enabled:filter hover:enabled:brightness-110 hover:enabled:contrast-125",
         secondary: "bg-[#70C3FF] hover:bg-[#4B65FF]",
       },
       fullWidth: {
