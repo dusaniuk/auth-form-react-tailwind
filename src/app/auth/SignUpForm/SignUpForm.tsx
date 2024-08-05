@@ -1,3 +1,4 @@
+import { useAuthContext } from "@app/context/auth";
 import { Button } from "@ui/components/Button";
 import { Text, TextProps } from "@ui/components/Text/Text";
 import { TextInput } from "@ui/components/TextInput";
@@ -23,6 +24,8 @@ const validationSchema: ObjectSchema<FormValues> = object().shape({
 
 export function SignUpForm() {
   const [passwordErrors, setPasswordErrors] = useState<string[]>([]);
+
+  const { login } = useAuthContext();
 
   const form = useFormik<FormValues>({
     initialValues: {
@@ -58,7 +61,7 @@ export function SignUpForm() {
       }
     },
     onSubmit: () => {
-      alert("Do something!");
+      login();
     },
   });
 

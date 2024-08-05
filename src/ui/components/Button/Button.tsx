@@ -9,7 +9,7 @@ const buttonVariants = cva(
       variant: {
         primary:
           "bg-gradient-to-r from-[#70C3FF] to-[#4B65FF] hover:filter hover:brightness-110 hover:contrast-125",
-        secondary: "bg-[#F2F2F2] text-[#4B65FF]",
+        secondary: "bg-[#70C3FF] hover:bg-[#4B65FF]",
       },
       fullWidth: {
         true: "w-full",
