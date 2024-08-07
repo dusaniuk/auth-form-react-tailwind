@@ -7,10 +7,10 @@ function App() {
   const { isAuthenticated } = useAuthContext();
 
   return (
-    <div className="relative bg-gradient-to-b from-[#F4F9FF] to-[#E0EDFB] h-lvh">
+    <div className="relative bg-gradient-to-b from-[#F4F9FF] to-[#E0EDFB] min-h-lvh">
       <StarryBackground />
       {!isAuthenticated && (
-        <div className="flex justify-center pt-24">
+        <div className="flex justify-center py-24">
           <SignUpForm />
         </div>
       )}
