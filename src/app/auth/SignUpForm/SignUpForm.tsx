@@ -104,13 +104,7 @@ export function SignUpForm() {
             />
           </div>
         </div>
-        <Button
-          className="mt-10"
-          type="submit"
-          variant="primary"
-          fullWidth
-          disabled={!form.dirty || !form.isValid}
-        >
+        <Button className="mt-10" type="submit" variant="primary" fullWidth>
           Sign up
         </Button>
       </form>
